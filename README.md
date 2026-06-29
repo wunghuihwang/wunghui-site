@@ -66,3 +66,4 @@ src/
 
 오프라인 빌드 환경이거나 폰트를 자체 호스팅하고 싶다면 `public/fonts`에 폰트 파일을 넣고 `src/app/layout.tsx`의 `<link>` 태그들을 `@font-face`로 교체하면 됩니다.
 # portfolio
+# wunghui-site
