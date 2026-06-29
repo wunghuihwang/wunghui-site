@@ -1,0 +1,40 @@
+{
+  "name": "frontend-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zustand": "4.5.4",
+    "framer-motion": "11.3.19",
+    "gsap": "3.12.5",
+    "@tanstack/react-table": "8.19.3"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "@types/node": "20.14.15",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "sass": "1.77.8",
+    "autoprefixer": "10.4.19",
+    "postcss": "8.4.40",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5"
+  },
+  "browserslist": [
+    ">0.3%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not op_mini all",
+    "iOS >= 12",
+    "Safari >= 12"
+  ]
+}

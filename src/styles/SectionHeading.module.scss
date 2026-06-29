@@ -1,0 +1,31 @@
+@use '@/styles/mixins' as *;
+
+.wrap {
+  margin-bottom: 48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+
+  @include media(tablet) {
+    margin-bottom: 36px;
+  }
+}
+
+.tag {
+  @include tiny;
+  color: var(--accent-mint);
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.sub {
+  color: var(--ink-soft);
+  max-width: 60ch;
+  font-size: 0.98rem;
+}

@@ -1,0 +1,106 @@
+@use '@/styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background var(--motion-base) var(--ease-spec), border-color var(--motion-base) var(--ease-spec);
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom-color: var(--line);
+  }
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+
+  @include media(tablet) {
+    padding: 14px 20px;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoMark {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-mint);
+  border: 1px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.logoText {
+  @include tiny;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.nav {
+  ul {
+    display: flex;
+    gap: 28px;
+  }
+
+  a {
+    @include tiny;
+    color: var(--ink-soft);
+    transition: color var(--motion-fast) ease;
+
+    &:hover {
+      color: var(--ink);
+    }
+  }
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  color: var(--ink);
+  @include tiny;
+  transition: border-color var(--motion-fast) ease, transform var(--motion-fast) ease, background var(--motion-fast) ease;
+
+  &:hover {
+    border-color: var(--accent-mint);
+    background: color-mix(in srgb, var(--accent-mint) 10%, transparent);
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+}
+
+.themeIcon {
+  font-size: 14px;
+}

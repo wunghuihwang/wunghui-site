@@ -1,0 +1,49 @@
+@use '@/styles/mixins' as *;
+
+.section {
+  padding: 100px 24px 60px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+  @include media(tablet) {
+    padding: 72px 20px 48px;
+  }
+}
+
+.emailLink {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent-mint);
+  margin-bottom: 32px;
+  transition: color var(--motion-fast) ease;
+
+  &:hover {
+    color: var(--accent-mint);
+  }
+}
+
+.channels {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.channelLabel {
+  @include tiny;
+  color: var(--ink-soft);
+}
+
+.channelValue {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
