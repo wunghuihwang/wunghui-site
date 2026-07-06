@@ -119,17 +119,18 @@ export default function ProjectsTable() {
                             onChange={(e) => setGlobalFilter(e.target.value)}
                             placeholder={t.searchPlaceholder}
                             className={styles.searchInput}
+                            aria-describedby="project-search-hint"
                         />
-                        <p className={styles.count} aria-live="polite">
+                        <p className={styles.count} aria-live="polite" id="project-search-hint">
                             {t.countPrefix} {rows.length} {t.countSuffix}
                         </p>
                     </div>
 
                     <div className={styles.tableWrap}>
-                        <table className={styles.table}>
+                        <table className={styles.table} role="table">
                             <thead>
                                 {table.getHeaderGroups().map((headerGroup) => (
-                                    <tr key={headerGroup.id}>
+                                    <tr key={headerGroup.id} role="row">
                                         {headerGroup.headers.map((header) => {
                                             const sortable = header.column.getCanSort();
                                             const sortDir = header.column.getIsSorted();
@@ -144,12 +145,17 @@ export default function ProjectsTable() {
                                                     key={header.id}
                                                     scope="col"
                                                     aria-sort={sortable ? ariaSort : undefined}
+                                                    role="columnheader"
                                                 >
                                                     {sortable ? (
                                                         <button
                                                             type="button"
                                                             className={styles.sortButton}
                                                             onClick={header.column.getToggleSortingHandler()}
+                                                            aria-label={`${flexRender(
+                                                                header.column.columnDef.header,
+                                                                header.getContext(),
+                                                            )} 정렬`}
                                                         >
                                                             {flexRender(
                                                                 header.column.columnDef.header,
@@ -174,16 +180,16 @@ export default function ProjectsTable() {
                             </thead>
                             <tbody>
                                 {rows.length === 0 ? (
-                                    <tr>
-                                        <td colSpan={columns.length} className={styles.empty}>
+                                    <tr role="row">
+                                        <td colSpan={columns.length} className={styles.empty} role="cell">
                                             {t.empty}
                                         </td>
                                     </tr>
                                 ) : (
                                     rows.map((row) => (
-                                        <tr key={row.id}>
+                                        <tr key={row.id} role="row">
                                             {row.getVisibleCells().map((cell) => (
-                                                <td key={cell.id} data-col={cell.column.id}>
+                                                <td key={cell.id} data-col={cell.column.id} role="cell">
                                                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                                 </td>
                                             ))}

@@ -35,6 +35,12 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none; // 로고는 밑줄 제거
+
+  &:focus-visible {
+    @include focus-ring;
+    border-radius: 4px;
+  }
 }
 
 .logoMark {
@@ -62,9 +68,16 @@
     @include tiny;
     color: var(--ink-soft);
     transition: color var(--motion-fast) ease;
+    text-decoration: none;
 
     &:hover {
       color: var(--ink);
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+      border-radius: 2px;
     }
   }
 
@@ -80,8 +93,8 @@
 }
 
 .toggle {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -90,10 +103,17 @@
   color: var(--ink);
   @include tiny;
   transition: border-color var(--motion-fast) ease, transform var(--motion-fast) ease, background var(--motion-fast) ease;
+  cursor: pointer;
+  min-width: 44px; // 터치 영역 최소 크기
+  min-height: 44px;
 
   &:hover {
     border-color: var(--accent-mint);
     background: color-mix(in srgb, var(--accent-mint) 10%, transparent);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
   }
 
   &:active {

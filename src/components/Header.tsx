@@ -47,7 +47,13 @@ export default function Header() {
                 </nav>
 
                 <div className={styles.actions}>
-                    <button type="button" className={styles.toggle} onClick={toggleLang} aria-label={t.toggleLang}>
+                    <button
+                        type="button"
+                        className={styles.toggle}
+                        onClick={toggleLang}
+                        aria-label={t.toggleLang}
+                        title={t.toggleLang}
+                    >
                         <span aria-hidden="true">{hydrated && lang === 'ko' ? 'EN' : 'KO'}</span>
                     </button>
                     <button
@@ -56,6 +62,7 @@ export default function Header() {
                         onClick={toggleTheme}
                         aria-label={t.toggleTheme}
                         aria-pressed={hydrated && theme === 'dark'}
+                        title={t.toggleTheme}
                     >
                         <span className={styles.themeIcon} aria-hidden="true">
                             {hydrated && theme === 'dark' ? '☾' : '☀'}
