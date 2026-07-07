@@ -126,7 +126,7 @@ export default function Contact() {
         <section className="mx-auto max-w-site px-6 pb-[60px] pt-[100px] max-md:px-5 max-md:pb-12 max-md:pt-[72px] max-sm:px-4" id="contact" aria-labelledby="contact-heading">
             <div className="flex flex-col">
                 <Reveal>
-                    <SectionHeading tag="CONTACT — 05" heading={t.heading} sub={t.sub} id="contact-heading" />
+                    <SectionHeading tag="CONTACT — 07" heading={t.heading} sub={t.sub} id="contact-heading" />
                 </Reveal>
 
                 <div className="mt-10 grid min-w-0 grid-cols-2 gap-[60px] max-md:grid-cols-1 max-md:gap-10">

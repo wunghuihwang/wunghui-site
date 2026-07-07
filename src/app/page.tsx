@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import FrontendStrength from '@/components/FrontendStrength';
 import Skills from '@/components/Skills';
 import ProjectsTable from '@/components/ProjectsTable';
 import Career from '@/components/Career';
@@ -14,6 +15,7 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <About />
+        <FrontendStrength />
         <Skills />
         <ProjectsTable />
         <Career />

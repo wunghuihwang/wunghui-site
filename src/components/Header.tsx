@@ -24,7 +24,9 @@ export default function Header() {
 
     const navItems = [
         { href: '#about', label: t.about },
+        { href: '#strengths', label: t.strengths },
         { href: '#skills', label: t.skills },
+        { href: '#projects', label: t.projects },
         { href: '#career', label: t.career },
         { href: '#contact', label: t.contact },
     ];
@@ -44,7 +46,7 @@ export default function Header() {
                 </a>
 
                 <nav className="max-md:hidden" aria-label="주요 섹션">
-                    <ul className="flex gap-7">
+                    <ul className="flex gap-5">
                         {navItems.map((item) => (
                             <li key={item.href}>
                                 <a

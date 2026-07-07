@@ -212,14 +212,23 @@ export default function Hero() {
                         <span className={`${tiny} tracking-[0.04em] text-soft`}>{t.specValue}</span>
                     </div>
 
-                    <div data-hero-cta>
-                        <a
-                            className="inline-flex items-center gap-2.5 rounded border border-ink px-[22px] py-3.5 text-[0.95rem] font-semibold text-ink transition-[background,color,transform] duration-fast hover:bg-ink hover:text-paper active:scale-[0.98] [&_span]:transition-transform [&_span]:duration-fast hover:[&_span]:translate-x-[3px]"
-                            href="#career"
-                        >
-                            {t.cta}
-                            <span aria-hidden="true">→</span>
-                        </a>
+                    <div className="flex flex-wrap gap-3" data-hero-cta>
+                        {t.ctas.map((cta) => (
+                            <a
+                                key={cta.href}
+                                className={`inline-flex items-center gap-2.5 rounded border px-[22px] py-3.5 text-[0.95rem] font-semibold transition-[background,color,transform,border-color] duration-fast active:scale-[0.98] max-sm:w-full max-sm:justify-between [&_span]:transition-transform [&_span]:duration-fast hover:[&_span]:translate-x-[3px] ${
+                                    cta.variant === 'primary'
+                                        ? 'border-ink bg-ink text-paper hover:border-mint hover:bg-mint'
+                                        : 'border-strong text-ink hover:border-ink hover:bg-ink hover:text-paper'
+                                }`}
+                                href={cta.href}
+                                target={cta.href.startsWith('http') ? '_blank' : undefined}
+                                rel={cta.href.startsWith('http') ? 'noreferrer' : undefined}
+                            >
+                                {cta.label}
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        ))}
                     </div>
                 </div>
 
