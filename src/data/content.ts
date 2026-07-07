@@ -40,7 +40,23 @@ export interface Content {
     };
     skills: { heading: string; sub: string; groups: SkillGroup[] };
     career: { heading: string; sub: string; companies: CareerCompany[] };
-    contact: { heading: string; sub: string; email: string; channels: { label: string; value: string }[] };
+    contact: {
+        heading: string;
+        sub: string;
+        email: string;
+        channels: { label: string; value: string }[];
+        form?: {
+            nameLabel: string;
+            namePlaceholder: string;
+            emailLabel: string;
+            emailPlaceholder: string;
+            phoneLabel: string;
+            phonePlaceholder: string;
+            messageLabel: string;
+            messagePlaceholder: string;
+            submitButton: string;
+        };
+    };
     footer: { rights: string };
 }
 
@@ -169,6 +185,17 @@ export const content: Record<Lang, Content> = {
                 { label: 'GitHub', value: 'https://github.com/wunghuihwang' },
                 { label: 'GitHub v2', value: 'https://github.com/wunhui' },
             ],
+            form: {
+                nameLabel: '이름',
+                namePlaceholder: '이름',
+                emailLabel: '이메일',
+                emailPlaceholder: '이메일',
+                phoneLabel: '연락처',
+                phonePlaceholder: '010-0000-0000',
+                messageLabel: '메시지',
+                messagePlaceholder: '메시지',
+                submitButton: '메시지 보내기',
+            },
         },
         footer: { rights: '모든 권리 보유.' },
     },
@@ -301,6 +328,17 @@ export const content: Record<Lang, Content> = {
                 { label: 'GitHub', value: 'https://github.com/wunghuihwang' },
                 { label: 'GitHub v2', value: 'https://github.com/wunhui' },
             ],
+            form: {
+                nameLabel: 'Name',
+                namePlaceholder: 'Your name',
+                emailLabel: 'Email',
+                emailPlaceholder: 'your@email.com',
+                phoneLabel: 'Phone',
+                phonePlaceholder: '+82-10-0000-0000',
+                messageLabel: 'Message',
+                messagePlaceholder: 'Your message',
+                submitButton: 'Send Message',
+            },
         },
         footer: { rights: 'All rights reserved.' },
     },
