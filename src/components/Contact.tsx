@@ -4,9 +4,12 @@ import { content } from '@/data/content';
 import { useUIStore } from '@/store/useUIStore';
 import emailjs from '@emailjs/browser';
 import { useEffect, useState } from 'react';
-import styles from '../styles/Contact.module.scss';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
+
+const tiny = 'font-mono text-[11px] font-medium uppercase tracking-[0.12em]';
+const inputClass =
+    'w-full min-w-0 rounded-lg border border-strong bg-raised px-4 py-3 font-[inherit] text-base text-ink transition-[border-color,background-color] duration-fast placeholder:text-soft focus:border-mint focus:bg-paper focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
 
 export default function Contact() {
     const lang = useUIStore((s) => s.lang);
@@ -120,24 +123,27 @@ export default function Contact() {
     };
 
     return (
-        <section className={styles.section} id="contact" aria-labelledby="contact-heading">
-            <div className={styles.inner}>
+        <section className="mx-auto max-w-site px-6 pb-[60px] pt-[100px] max-md:px-5 max-md:pb-12 max-md:pt-[72px] max-sm:px-4" id="contact" aria-labelledby="contact-heading">
+            <div className="flex flex-col">
                 <Reveal>
                     <SectionHeading tag="CONTACT — 05" heading={t.heading} sub={t.sub} id="contact-heading" />
                 </Reveal>
 
-                <div className={styles.content}>
+                <div className="mt-10 grid min-w-0 grid-cols-2 gap-[60px] max-md:grid-cols-1 max-md:gap-10">
                     <Reveal>
-                        <div className={styles.infoBlock}>
-                            <a className={styles.emailLink} href={`mailto:${t.email}`}>
+                        <div className="flex min-w-0 flex-col gap-8">
+                            <a
+                                className="inline-block max-w-full break-all border-b-2 border-mint font-display text-[clamp(1.35rem,6.8vw,3rem)] font-bold leading-tight text-ink transition-colors duration-fast hover:text-mint"
+                                href={`mailto:${t.email}`}
+                            >
                                 {t.email}
                             </a>
 
-                            <ul className={styles.channels}>
+                            <ul className="flex flex-wrap gap-8 max-sm:gap-5">
                                 {t.channels.map((ch) => (
-                                    <li key={ch.label} className={styles.channel}>
-                                        <span className={styles.channelLabel}>{ch.label}</span>
-                                        <span className={styles.channelValue}>{ch.value}</span>
+                                    <li key={ch.label} className="min-w-0 flex flex-col gap-1">
+                                        <span className={`${tiny} text-soft`}>{ch.label}</span>
+                                        <span className="break-all font-mono text-[0.92rem] text-ink">{ch.value}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -145,10 +151,10 @@ export default function Contact() {
                     </Reveal>
 
                     <Reveal delay={0.1}>
-                        <form className={styles.form} onSubmit={handleSubmit}>
-                            <div className={styles.row}>
-                                <div className={styles.field}>
-                                    <label htmlFor="name" className={styles.label}>
+                        <form className="flex min-w-0 flex-col gap-6" onSubmit={handleSubmit}>
+                            <div className="grid min-w-0 grid-cols-2 gap-5 max-md:grid-cols-1">
+                                <div className="flex min-w-0 flex-col gap-2">
+                                    <label htmlFor="name" className="text-sm font-medium text-soft">
                                         {form?.nameLabel}
                                     </label>
                                     <input
@@ -159,11 +165,11 @@ export default function Contact() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className={styles.input}
+                                        className={inputClass}
                                     />
                                 </div>
-                                <div className={styles.field}>
-                                    <label htmlFor="email" className={styles.label}>
+                                <div className="flex min-w-0 flex-col gap-2">
+                                    <label htmlFor="email" className="text-sm font-medium text-soft">
                                         {form?.emailLabel}
                                     </label>
                                     <input
@@ -174,13 +180,13 @@ export default function Contact() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className={styles.input}
+                                        className={inputClass}
                                     />
                                 </div>
                             </div>
 
-                            <div className={styles.field}>
-                                <label htmlFor="phone" className={styles.label}>
+                            <div className="flex min-w-0 flex-col gap-2">
+                                <label htmlFor="phone" className="text-sm font-medium text-soft">
                                     {form?.phoneLabel}
                                 </label>
                                 <input
@@ -190,12 +196,12 @@ export default function Contact() {
                                     placeholder={form?.phonePlaceholder}
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className={styles.input}
+                                    className={inputClass}
                                 />
                             </div>
 
-                            <div className={styles.field}>
-                                <label htmlFor="message" className={styles.label}>
+                            <div className="flex min-w-0 flex-col gap-2">
+                                <label htmlFor="message" className="text-sm font-medium text-soft">
                                     {form?.messageLabel}
                                 </label>
                                 <textarea
@@ -205,13 +211,17 @@ export default function Contact() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    className={styles.textarea}
+                                    className={`${inputClass} min-h-[120px] resize-y font-mono text-[0.9rem]`}
                                     rows={4}
                                 />
                             </div>
 
-                            <div className={styles.footer}>
-                                <button type="submit" className={styles.submitButton} disabled={status === 'loading'}>
+                            <div className="flex flex-col items-start gap-3">
+                                <button
+                                    type="submit"
+                                    className="rounded-lg bg-gradient-to-br from-[#7c3aed] to-[#6d28d9] px-10 py-3.5 font-display text-base font-semibold text-white transition-[transform,box-shadow,opacity] duration-fast hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(124,58,237,0.3)] active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-none max-sm:w-full"
+                                    disabled={status === 'loading'}
+                                >
                                     {status === 'loading'
                                         ? lang === 'ko'
                                             ? '전송 중...'
@@ -220,10 +230,10 @@ export default function Contact() {
                                 </button>
 
                                 {status === 'success' && feedbackMessage && (
-                                    <p className={styles.successMessage}>{feedbackMessage}</p>
+                                    <p className="text-sm font-medium text-[#10b981]">{feedbackMessage}</p>
                                 )}
                                 {status === 'error' && feedbackMessage && (
-                                    <p className={styles.errorMessage}>{feedbackMessage}</p>
+                                    <p className="text-sm font-medium text-[#ef4444]">{feedbackMessage}</p>
                                 )}
                             </div>
                         </form>

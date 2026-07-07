@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import '@/styles/globals.scss';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: '프론트엔드 개발자 · 퍼블리셔 포트폴리오',

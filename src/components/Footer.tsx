@@ -2,7 +2,8 @@
 
 import { content } from '@/data/content';
 import { useUIStore } from '@/store/useUIStore';
-import styles from '../styles/Footer.module.scss';
+
+const tiny = 'font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-soft';
 
 export default function Footer() {
     const lang = useUIStore((s) => s.lang);
@@ -10,10 +11,10 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className={styles.footer}>
-            <div className={styles.inner}>
-                <span className={styles.mark}>FE.PUB</span>
-                <p className={styles.rights}>
+        <footer className="border-t border-line">
+            <div className="mx-auto flex max-w-site items-center justify-between gap-3 p-6 max-md:flex-col max-md:items-start max-md:p-5">
+                <span className={tiny}>FE.PUB</span>
+                <p className={tiny}>
                     © {year} · {t.footer.rights}
                 </p>
             </div>

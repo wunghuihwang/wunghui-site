@@ -12,7 +12,6 @@ import {
     type SortingState,
 } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
-import styles from '../styles/ProjectsTable.module.scss';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 
@@ -56,6 +55,8 @@ const COPY = {
         empty: 'No matching projects.',
     },
 } as const;
+
+const tiny = 'font-mono text-[11px] font-medium uppercase tracking-[0.12em]';
 
 export default function ProjectsTable() {
     const lang = useUIStore((s) => s.lang);
@@ -101,15 +102,15 @@ export default function ProjectsTable() {
     const rows = table.getRowModel().rows;
 
     return (
-        <section className={styles.section} id="projects" aria-labelledby="projects-heading">
-            <div className={styles.inner}>
+        <section className="mx-auto max-w-site px-6 py-[100px] max-md:px-5 max-md:py-[72px] max-sm:px-4" id="projects" aria-labelledby="projects-heading">
+            <div className="min-w-0">
                 <Reveal>
                     <SectionHeading tag={t.tag} heading={t.heading} sub={t.sub} id="projects-heading" />
                 </Reveal>
 
                 <Reveal>
-                    <div className={styles.toolbar}>
-                        <label htmlFor="project-search" className={styles.searchLabel}>
+                    <div className="mb-5 flex min-w-0 flex-wrap items-baseline gap-4 max-sm:flex-col max-sm:items-stretch">
+                        <label htmlFor="project-search" className={`${tiny} font-medium text-soft`}>
                             {t.searchLabel}
                         </label>
                         <input
@@ -118,16 +119,19 @@ export default function ProjectsTable() {
                             value={globalFilter}
                             onChange={(e) => setGlobalFilter(e.target.value)}
                             placeholder={t.searchPlaceholder}
-                            className={styles.searchInput}
+                            className="min-h-11 min-w-[220px] flex-1 rounded border border-strong bg-raised px-3 py-3 font-[inherit] text-[0.92rem] text-ink placeholder:text-soft focus:outline-none max-sm:w-full max-sm:min-w-0"
                             aria-describedby="project-search-hint"
                         />
-                        <p className={styles.count} aria-live="polite" id="project-search-hint">
+                        <p className={`${tiny} ml-auto text-mint max-sm:ml-0`} aria-live="polite" id="project-search-hint">
                             {t.countPrefix} {rows.length} {t.countSuffix}
                         </p>
                     </div>
 
-                    <div className={styles.tableWrap}>
-                        <table className={styles.table} role="table">
+                    <div className="w-full overflow-x-auto rounded-md border border-line [-webkit-overflow-scrolling:touch]">
+                        <table
+                            className={`w-full min-w-[760px] border-collapse text-[0.9rem] max-sm:min-w-[640px] [&_td]:whitespace-nowrap [&_td]:border-b [&_td]:border-line [&_td]:px-4 [&_td]:py-3.5 [&_td]:text-left [&_td]:align-top max-sm:[&_td]:px-3 max-sm:[&_td]:py-3 [&_th]:whitespace-nowrap [&_th]:border-b [&_th]:border-line [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:align-middle max-sm:[&_th]:px-3 max-sm:[&_th]:py-2.5 [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:bg-raised [&_thead_th]:font-mono [&_thead_th]:text-[11px] [&_thead_th]:font-semibold [&_thead_th]:uppercase [&_thead_th]:tracking-[0.12em] [&_thead_th]:text-soft [&_tbody_tr:last-child_td]:border-b-0 [&_tbody_tr:hover]:bg-[color-mix(in_srgb,var(--accent-mint)_6%,transparent)] [&_td[data-col='achievement']]:min-w-[240px] [&_td[data-col='achievement']]:whitespace-normal [&_td[data-col='achievement']]:text-soft`}
+                            role="table"
+                        >
                             <thead>
                                 {table.getHeaderGroups().map((headerGroup) => (
                                     <tr key={headerGroup.id} role="row">
@@ -150,7 +154,7 @@ export default function ProjectsTable() {
                                                     {sortable ? (
                                                         <button
                                                             type="button"
-                                                            className={styles.sortButton}
+                                                            className={`${tiny} inline-flex h-6 items-center gap-1.5 rounded-sm p-0 text-soft transition-colors duration-fast hover:text-ink`}
                                                             onClick={header.column.getToggleSortingHandler()}
                                                             aria-label={`${flexRender(
                                                                 header.column.columnDef.header,
@@ -161,7 +165,7 @@ export default function ProjectsTable() {
                                                                 header.column.columnDef.header,
                                                                 header.getContext(),
                                                             )}
-                                                            <span aria-hidden="true" className={styles.sortIcon}>
+                                                            <span aria-hidden="true" className="text-[0.8em] opacity-60">
                                                                 {sortDir === 'asc'
                                                                     ? '↑'
                                                                     : sortDir === 'desc'
@@ -170,7 +174,9 @@ export default function ProjectsTable() {
                                                             </span>
                                                         </button>
                                                     ) : (
-                                                        flexRender(header.column.columnDef.header, header.getContext())
+                                                        <span className={`${tiny} inline-flex h-6 items-center text-soft`}>
+                                                            {flexRender(header.column.columnDef.header, header.getContext())}
+                                                        </span>
                                                     )}
                                                 </th>
                                             );
@@ -181,7 +187,7 @@ export default function ProjectsTable() {
                             <tbody>
                                 {rows.length === 0 ? (
                                     <tr role="row">
-                                        <td colSpan={columns.length} className={styles.empty} role="cell">
+                                        <td colSpan={columns.length} className="px-4 py-8 text-center text-soft" role="cell">
                                             {t.empty}
                                         </td>
                                     </tr>
