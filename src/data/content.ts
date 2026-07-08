@@ -86,7 +86,8 @@ export interface Content {
 const koProjects: ProjectCase[] = [
     {
         title: '남양부직포 ERP 관리자 시스템',
-        summary: 'Next.js와 TypeScript 기반으로 계정, 매장, 거래처, 품목, 출고, 재고 조회 등 관리자 업무에 필요한 화면을 개발한 ERP 프로젝트입니다.',
+        summary:
+            'Next.js와 TypeScript 기반으로 계정, 매장, 거래처, 품목, 출고, 재고 조회 등 관리자 업무에 필요한 화면을 개발한 ERP 프로젝트입니다.',
         tasks: [
             '계정/매장/거래처/품목 관리 화면 개발',
             '검색, 정렬, 페이지네이션이 가능한 데이터 테이블 구현',
@@ -95,12 +96,22 @@ const koProjects: ProjectCase[] = [
             'Zustand 기반 UI 상태 관리',
             '권한별 메뉴 및 페이지 접근 처리',
         ],
-        stack: ['Next.js', 'TypeScript', 'React Query', 'Zustand', 'TanStack Table', 'React Hook Form', 'Zod', 'shadcn/ui'],
+        stack: [
+            'Next.js',
+            'TypeScript',
+            'React Query',
+            'Zustand',
+            'TanStack Table',
+            'React Hook Form',
+            'Zod',
+            'shadcn/ui',
+        ],
         highlight: '관리자 페이지에서 반복되는 테이블, 필터, 모달, 폼 구조를 실무 흐름에 맞게 구현했습니다.',
     },
     {
         title: '우잉 관리자 및 스토어 화면',
-        summary: '매장 운영, 서비스 신청, 약관, 알림, 사업자 정보 관리 등 운영성 화면을 중심으로 개발한 관리자/스토어 프로젝트입니다.',
+        summary:
+            '매장 운영, 서비스 신청, 약관, 알림, 사업자 정보 관리 등 운영성 화면을 중심으로 개발한 관리자/스토어 프로젝트입니다.',
         tasks: [
             '서비스 신청/변경 화면 UI 구현',
             '약관 조회 및 이전 약관 페이지 개발',
@@ -137,11 +148,13 @@ const koProjects: ProjectCase[] = [
             '웹 접근성 인증 대응',
         ],
         stack: ['Vue.js', 'HTML', 'SCSS', 'JavaScript', '웹 접근성'],
-        highlight: '웹 표준과 접근성을 고려한 화면 구현 경험을 쌓았고, 이후 프론트엔드 개발 역량으로 확장하는 기반이 되었습니다.',
+        highlight:
+            '웹 표준과 접근성을 고려한 화면 구현 경험을 쌓았고, 이후 프론트엔드 개발 역량으로 확장하는 기반이 되었습니다.',
     },
     {
         title: 'Kakao Map 기반 장소 추천 서비스',
-        summary: '현재 위치와 카테고리를 기반으로 주변 장소를 검색하고, 거리와 조건에 따라 추천 결과를 보여주는 지도 기반 웹 프로젝트입니다.',
+        summary:
+            '현재 위치와 카테고리를 기반으로 주변 장소를 검색하고, 거리와 조건에 따라 추천 결과를 보여주는 지도 기반 웹 프로젝트입니다.',
         tasks: [
             'Kakao Maps SDK 연동',
             '현재 위치 기반 주변 장소 검색',
@@ -155,7 +168,8 @@ const koProjects: ProjectCase[] = [
     },
     {
         title: 'Movies / Mini Community',
-        summary: '목록, 상세, 검색, 작성 흐름을 통해 프론트엔드 기본 구조와 사용자 인터랙션을 정리한 개인 프로젝트입니다.',
+        summary:
+            '목록, 상세, 검색, 작성 흐름을 통해 프론트엔드 기본 구조와 사용자 인터랙션을 정리한 개인 프로젝트입니다.',
         tasks: [
             '목록/상세 페이지 라우팅 구성',
             '검색 및 필터 UI 구현',
@@ -171,7 +185,8 @@ const koProjects: ProjectCase[] = [
 const enProjects: ProjectCase[] = [
     {
         title: 'Namyang Nonwoven ERP Admin System',
-        summary: 'An ERP admin project built with Next.js and TypeScript for account, store, client, item, shipment, and inventory management screens.',
+        summary:
+            'An ERP admin project built with Next.js and TypeScript for account, store, client, item, shipment, and inventory management screens.',
         tasks: [
             'Developed account, store, client, and item management screens',
             'Implemented searchable, sortable, paginated data tables',
@@ -180,12 +195,23 @@ const enProjects: ProjectCase[] = [
             'Managed UI state with Zustand',
             'Handled role-based menus and page access',
         ],
-        stack: ['Next.js', 'TypeScript', 'React Query', 'Zustand', 'TanStack Table', 'React Hook Form', 'Zod', 'shadcn/ui'],
-        highlight: 'Implemented repeated admin patterns such as tables, filters, modals, and forms around real operational workflows.',
+        stack: [
+            'Next.js',
+            'TypeScript',
+            'React Query',
+            'Zustand',
+            'TanStack Table',
+            'React Hook Form',
+            'Zod',
+            'shadcn/ui',
+        ],
+        highlight:
+            'Implemented repeated admin patterns such as tables, filters, modals, and forms around real operational workflows.',
     },
     {
         title: 'Wooing Admin and Store Screens',
-        summary: 'An admin/store project focused on operational screens such as store management, service applications, terms, notifications, and business information.',
+        summary:
+            'An admin/store project focused on operational screens such as store management, service applications, terms, notifications, and business information.',
         tasks: [
             'Built service application and change request screens',
             'Developed terms lookup and previous terms pages',
@@ -195,7 +221,8 @@ const enProjects: ProjectCase[] = [
             'Supported parts of multilingual UI',
         ],
         stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Query', 'i18next'],
-        highlight: 'Built operational screens with attention to data lookup, status display, and externally accessible page flows.',
+        highlight:
+            'Built operational screens with attention to data lookup, status display, and externally accessible page flows.',
     },
     {
         title: 'DID / Mobile Waiting System',
@@ -209,11 +236,13 @@ const enProjects: ProjectCase[] = [
             'Managed UI state from API responses',
         ],
         stack: ['Next.js', 'TypeScript', 'React Query', 'Tailwind CSS'],
-        highlight: 'Separated customer-facing state and operator display needs in a waiting screen where real-time status clarity matters.',
+        highlight:
+            'Separated customer-facing state and operator display needs in a waiting screen where real-time status clarity matters.',
     },
     {
         title: 'LINA Life Insurance Website Renewal',
-        summary: 'A large-scale website renewal project covering insurance product pages, cyber service screens, and shared UI components.',
+        summary:
+            'A large-scale website renewal project covering insurance product pages, cyber service screens, and shared UI components.',
         tasks: [
             'Marked up major insurance product and cyber service screens',
             'Implemented responsive and adaptive layouts',
@@ -222,11 +251,13 @@ const enProjects: ProjectCase[] = [
             'Supported web accessibility certification',
         ],
         stack: ['Vue.js', 'HTML', 'SCSS', 'JavaScript', 'Web Accessibility'],
-        highlight: 'Built a strong foundation in standards-based UI implementation and accessibility, which later expanded into frontend development work.',
+        highlight:
+            'Built a strong foundation in standards-based UI implementation and accessibility, which later expanded into frontend development work.',
     },
     {
         title: 'Kakao Map-based Place Recommendation Service',
-        summary: 'A map-based web project that searches nearby places by current location and category, then recommends results by distance and conditions.',
+        summary:
+            'A map-based web project that searches nearby places by current location and category, then recommends results by distance and conditions.',
         tasks: [
             'Integrated Kakao Maps SDK',
             'Searched nearby places from current location',
@@ -236,11 +267,13 @@ const enProjects: ProjectCase[] = [
             'Handled the window object in a Next.js environment',
         ],
         stack: ['Next.js', 'TypeScript', 'Kakao Maps SDK', 'Tailwind CSS'],
-        highlight: 'Integrated an external SDK in a Next.js environment and connected map and list UI into one working flow.',
+        highlight:
+            'Integrated an external SDK in a Next.js environment and connected map and list UI into one working flow.',
     },
     {
         title: 'Movies / Mini Community',
-        summary: 'A personal project for practicing frontend fundamentals through list, detail, search, and writing flows.',
+        summary:
+            'A personal project for practicing frontend fundamentals through list, detail, search, and writing flows.',
         tasks: [
             'Configured list/detail page routing',
             'Implemented search and filter UI',
@@ -249,7 +282,8 @@ const enProjects: ProjectCase[] = [
             'Handled empty and loading states based on state changes',
         ],
         stack: ['React', 'TypeScript', 'Tailwind CSS', 'REST API'],
-        highlight: 'Repeated practical frontend patterns such as list, detail, form, and state display in a smaller project scope.',
+        highlight:
+            'Repeated practical frontend patterns such as list, detail, form, and state display in a smaller project scope.',
     },
 ];
 
@@ -257,7 +291,8 @@ export const content: Record<Lang, Content> = {
     ko: {
         meta: {
             title: '프론트엔드 개발자 포트폴리오',
-            description: '퍼블리셔 출신의 화면 구현력을 기반으로 Next.js와 TypeScript로 관리자 페이지와 데이터 중심 UI를 개발하는 프론트엔드 개발자 포트폴리오',
+            description:
+                '퍼블리셔 출신의 화면 구현력을 기반으로 Next.js와 TypeScript로 관리자 페이지와 데이터 중심 UI를 개발하는 프론트엔드 개발자 포트폴리오',
         },
         nav: {
             about: 'About',
@@ -323,11 +358,27 @@ export const content: Record<Lang, Content> = {
             heading: 'Skills',
             sub: '기술을 역할별로 묶어 실무에서 어떻게 쓰는지 드러냈습니다.',
             groups: [
-                { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript'], desc: '페이지 구성, API 연동, 상태 처리, 실무 화면 개발' },
+                {
+                    label: 'Frontend',
+                    items: ['React', 'Next.js', 'TypeScript'],
+                    desc: '페이지 구성, API 연동, 상태 처리, 실무 화면 개발',
+                },
                 { label: 'State & Data', items: ['React Query', 'Zustand'], desc: '서버 상태와 클라이언트 상태 분리' },
-                { label: 'UI', items: ['Tailwind CSS', 'SCSS', 'shadcn/ui'], desc: '반응형 UI, 공통 컴포넌트, 디자인 시스템 활용' },
-                { label: 'Table & Form', items: ['TanStack Table', 'React Hook Form', 'Zod'], desc: '관리자 페이지의 테이블, 필터, 폼 검증 구현' },
-                { label: 'ETC', items: ['Kakao Maps API', 'i18next', 'Git', 'Vercel'], desc: '지도 API, 다국어, 배포, 협업 경험' },
+                {
+                    label: 'UI',
+                    items: ['Tailwind CSS', 'SCSS', 'shadcn/ui'],
+                    desc: '반응형 UI, 공통 컴포넌트, 디자인 시스템 활용',
+                },
+                {
+                    label: 'Table & Form',
+                    items: ['TanStack Table', 'React Hook Form', 'Zod'],
+                    desc: '관리자 페이지의 테이블, 필터, 폼 검증 구현',
+                },
+                {
+                    label: 'ETC',
+                    items: ['Kakao Maps API', 'i18next', 'Git', 'Vercel'],
+                    desc: '지도 API, 다국어, 배포, 협업 경험',
+                },
             ],
         },
         projects: {
@@ -351,7 +402,8 @@ export const content: Record<Lang, Content> = {
                     company: 'Endusoft',
                     period: '2024.05 - Present',
                     role: 'Frontend Developer / Web Publisher',
-                    summary: '관리자 페이지, ERP, 스토어 화면, DID 대기 시스템 등 운영성 웹 화면을 개발했습니다. Next.js, TypeScript, React Query, Zustand를 활용해 API 연동, 상태 관리, 데이터 테이블, 모달, 폼 UI를 구현했습니다.',
+                    summary:
+                        '관리자 페이지, ERP, 스토어 화면, DID 대기 시스템 등 운영성 웹 화면을 개발했습니다. Next.js, TypeScript, React Query, Zustand를 활용해 API 연동, 상태 관리, 데이터 테이블, 모달, 폼 UI를 구현했습니다.',
                     duties: [
                         'ERP 관리자 페이지 개발',
                         '서비스 신청/변경 관리 화면 개발',
@@ -364,7 +416,8 @@ export const content: Record<Lang, Content> = {
                     company: 'Freeive',
                     period: '2022.03 - 2023.09',
                     role: 'Web Publisher',
-                    summary: '대형 웹사이트 리뉴얼 프로젝트에서 웹 표준, 접근성, 반응형 UI를 중심으로 화면을 구현했습니다. 시안을 정확하게 구현하는 퍼블리싱 역량을 쌓았고, 공통 UI 컴포넌트와 접근성 개선 작업을 경험했습니다.',
+                    summary:
+                        '대형 웹사이트 리뉴얼 프로젝트에서 웹 표준, 접근성, 반응형 UI를 중심으로 화면을 구현했습니다. 시안을 정확하게 구현하는 퍼블리싱 역량을 쌓았고, 공통 UI 컴포넌트와 접근성 개선 작업을 경험했습니다.',
                     duties: [
                         'Vue 기반 웹사이트 퍼블리싱',
                         '공통 UI 컴포넌트 구현',
@@ -384,8 +437,8 @@ export const content: Record<Lang, Content> = {
                 { label: 'GitHub v2', value: 'https://github.com/wunhui' },
             ],
             form: {
-                nameLabel: '이름',
-                namePlaceholder: '이름',
+                nameLabel: '회사명',
+                namePlaceholder: '회사명',
                 emailLabel: '이메일',
                 emailPlaceholder: '이메일',
                 phoneLabel: '연락처',
@@ -400,7 +453,8 @@ export const content: Record<Lang, Content> = {
     en: {
         meta: {
             title: 'Frontend Developer Portfolio',
-            description: 'Frontend developer portfolio focused on admin pages and data-driven UI with Next.js and TypeScript',
+            description:
+                'Frontend developer portfolio focused on admin pages and data-driven UI with Next.js and TypeScript',
         },
         nav: {
             about: 'About',
@@ -444,21 +498,53 @@ export const content: Record<Lang, Content> = {
             heading: 'Frontend Strength',
             sub: 'A concise view of the strengths I bring to frontend product work.',
             items: [
-                { title: 'Data-driven UI', desc: 'Implemented search, filters, sorting, pagination, detail views, and create/update/delete flows common in admin pages.' },
-                { title: 'State separation', desc: 'Used React Query for server state and Zustand for client UI state such as modals, selections, and filters.' },
-                { title: 'UI quality from publishing', desc: 'Built reliable service screens based on web standards, accessibility, responsive UI, and precise implementation.' },
-                { title: 'Operational screen experience', desc: 'Worked on screens used by real operators: ERP, admin pages, terms, and waiting systems.' },
+                {
+                    title: 'Data-driven UI',
+                    desc: 'Implemented search, filters, sorting, pagination, detail views, and create/update/delete flows common in admin pages.',
+                },
+                {
+                    title: 'State separation',
+                    desc: 'Used React Query for server state and Zustand for client UI state such as modals, selections, and filters.',
+                },
+                {
+                    title: 'UI quality from publishing',
+                    desc: 'Built reliable service screens based on web standards, accessibility, responsive UI, and precise implementation.',
+                },
+                {
+                    title: 'Operational screen experience',
+                    desc: 'Worked on screens used by real operators: ERP, admin pages, terms, and waiting systems.',
+                },
             ],
         },
         skills: {
             heading: 'Skills',
             sub: 'Grouped by how each tool is used in production UI work.',
             groups: [
-                { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript'], desc: 'Page composition, API integration, state handling, production UI development' },
-                { label: 'State & Data', items: ['React Query', 'Zustand'], desc: 'Server state and client UI state separation' },
-                { label: 'UI', items: ['Tailwind CSS', 'SCSS', 'shadcn/ui'], desc: 'Responsive UI, shared components, design-system usage' },
-                { label: 'Table & Form', items: ['TanStack Table', 'React Hook Form', 'Zod'], desc: 'Admin tables, filters, and form validation' },
-                { label: 'ETC', items: ['Kakao Maps API', 'i18next', 'Git', 'Vercel'], desc: 'Map API, i18n, deployment, collaboration' },
+                {
+                    label: 'Frontend',
+                    items: ['React', 'Next.js', 'TypeScript'],
+                    desc: 'Page composition, API integration, state handling, production UI development',
+                },
+                {
+                    label: 'State & Data',
+                    items: ['React Query', 'Zustand'],
+                    desc: 'Server state and client UI state separation',
+                },
+                {
+                    label: 'UI',
+                    items: ['Tailwind CSS', 'SCSS', 'shadcn/ui'],
+                    desc: 'Responsive UI, shared components, design-system usage',
+                },
+                {
+                    label: 'Table & Form',
+                    items: ['TanStack Table', 'React Hook Form', 'Zod'],
+                    desc: 'Admin tables, filters, and form validation',
+                },
+                {
+                    label: 'ETC',
+                    items: ['Kakao Maps API', 'i18next', 'Git', 'Vercel'],
+                    desc: 'Map API, i18n, deployment, collaboration',
+                },
             ],
         },
         projects: {
@@ -482,15 +568,28 @@ export const content: Record<Lang, Content> = {
                     company: 'Endusoft',
                     period: '2024.05 - Present',
                     role: 'Frontend Developer / Web Publisher',
-                    summary: 'Built operational web screens including admin pages, ERP, store screens, and DID waiting systems. Implemented API integration, state management, data tables, modals, and form UI with Next.js, TypeScript, React Query, and Zustand.',
-                    duties: ['ERP admin development', 'Service application/change management screens', 'Terms and previous terms pages', 'DID/mobile waiting system screens', 'Shared table, modal, and status badge UI'],
+                    summary:
+                        'Built operational web screens including admin pages, ERP, store screens, and DID waiting systems. Implemented API integration, state management, data tables, modals, and form UI with Next.js, TypeScript, React Query, and Zustand.',
+                    duties: [
+                        'ERP admin development',
+                        'Service application/change management screens',
+                        'Terms and previous terms pages',
+                        'DID/mobile waiting system screens',
+                        'Shared table, modal, and status badge UI',
+                    ],
                 },
                 {
                     company: 'Freeive',
                     period: '2022.03 - 2023.09',
                     role: 'Web Publisher',
-                    summary: 'Implemented large-scale website renewal screens with a focus on web standards, accessibility, and responsive UI. Built publishing fundamentals, shared UI components, and accessibility improvements.',
-                    duties: ['Vue-based website publishing', 'Shared UI components', 'Responsive/adaptive screens', 'Accessibility certification support'],
+                    summary:
+                        'Implemented large-scale website renewal screens with a focus on web standards, accessibility, and responsive UI. Built publishing fundamentals, shared UI components, and accessibility improvements.',
+                    duties: [
+                        'Vue-based website publishing',
+                        'Shared UI components',
+                        'Responsive/adaptive screens',
+                        'Accessibility certification support',
+                    ],
                 },
             ],
         },
@@ -504,8 +603,8 @@ export const content: Record<Lang, Content> = {
                 { label: 'GitHub v2', value: 'https://github.com/wunhui' },
             ],
             form: {
-                nameLabel: 'Name',
-                namePlaceholder: 'Your name',
+                nameLabel: 'Company name',
+                namePlaceholder: 'Your Company name',
                 emailLabel: 'Email',
                 emailPlaceholder: 'your@email.com',
                 phoneLabel: 'Phone',
